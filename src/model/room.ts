@@ -1,5 +1,3 @@
-/// <reference path="../../lib/three.d.ts" />
-/// <reference path="../../lib/jQuery.d.ts" />
 /// <reference path="../core/utils.ts" />
 /// <reference path="corner.ts" />
 /// <reference path="floorplan.ts" />
@@ -89,7 +87,9 @@ module BP3D.Model {
         new THREE.MeshBasicMaterial({
           side: THREE.DoubleSide
         }));
-      this.floorPlane.visible = false;
+      this.floorPlane.visible = true;
+      (<any>this.floorPlane.material).visible = false;
+
       this.floorPlane.rotation.set(Math.PI / 2, 0, 0);
       (<any>this.floorPlane).room = this; // js monkey patch
     }
